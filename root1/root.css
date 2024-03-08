@@ -1,0 +1,75 @@
+.page {
+    display: none;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.active {
+    display: block;
+}
+
+#prevButton,
+#nextButton {
+    position: fixed;
+    top: 50%;
+    background: none;
+    color: #FF6863; /* Màu hồng đậm */
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 0; /* Ẩn văn bản */
+    z-index: 999;
+    outline: none; /* Loại bỏ ô vuông màu trắng */
+}
+
+#prevButton:hover,
+#nextButton:hover {
+    transform: translateY(-50%) scale(0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.triangle-left,
+.triangle-right {
+    position: fixed;
+    top: 50%;
+    width: 24px;
+    height: 24px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none;
+}
+
+.triangle-left {
+    left: 10px;
+}
+
+.triangle-right {
+    right: 10px;
+}
+
+.triangle-left:before,
+.triangle-right:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background-color: #FF6863; /* Màu hồng đậm */
+    clip-path: polygon(
+        50% 0%,
+        90% 35%,
+        100% 55%,
+        90% 75%,
+        50% 100%,
+        10% 75%,
+        0% 55%,
+        10% 35%
+    );
+}
+
+.triangle-right:before {
+    transform: rotate(180deg);
+}

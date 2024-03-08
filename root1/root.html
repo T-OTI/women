@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-page Website</title>
+    <link rel="stylesheet" href="root.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Trang 1 -->
+    <div id="page1" class="page active">
+        <!-- Nội dung của trang 1 -->
+        <div class="envelope-wrapper">
+            <div id="envelope" class="close">
+                <div class="front flap"></div>
+                <div class="front pocket"></div>
+                <div class="letter">
+                    <p class="words line1">Happy 8/3 em bé iuuuuuu</p>
+                    <p class="words line2">Thưnnn em bé nhìuuuuu</p>
+                    <p class="words line3">Love</p>
+                    <p class="words line4">Nha đầu :***</p>
+                </div>
+                <div class="hearts">
+                    <div class="heart a1"></div>
+                    <div class="heart a2"></div>
+                    <div class="heart a3"></div>
+                </div>
+            </div>
+        </div>
+        <div class="reset">
+            <button id="open">Open</button>
+            <button id="reset">Reset</button>
+        </div>
+        <h1 class="valentine">Happy Women's Day 8/3</h1>
+
+        <!-- Liên kết CSS và JavaScript chỉ cho trang 1 -->
+        <link href="letter.css" rel="stylesheet" type="text/css" media="screen">
+        <script src="letter.js"></script>
+    </div>
+    <div id="page2" class="page">
+        <!-- Nội dung của trang 2 -->
+        <div class="happy-valentines">
+            <div class="valentines-day-card">
+                <div class="clouds"></div>
+                <div class="hearts">
+                    <div class="heartOne"></div>
+                    <div class="heartTwo"></div>
+                    <div class="heartThree"></div>
+                    <div class="heartFour"></div>
+                    <div class="heartFive"></div>
+                </div>
+                <div class="text"><span>Happy Women's Day</div>
+            </div>
+        </div>
+
+        <!-- Liên kết CSS chỉ cho trang 2 -->
+        <link href="heart.css" rel="stylesheet" type="text/css" media="screen">
+    </div>
+
+    <div id="page3" class="page">
+        <!-- Nội dung của trang 3 -->
+        <div class="container">
+            <div class="letter">
+                <h1>Your smile is as beautiful as rose, I hope you can always smile. :)) lấy trên mạng đó, nhưng nó đúng mò :>, bao giờ về anh bù cho nhoaaa, chin lúi em bé iuu vì hong làm iem bé hết bùn hôm nay được :< , anh thương em bé nhiềuuuuuu, moahhhhh moahhhh moahhhhhhh :*** (✿◡w◡) Hapyyyyyyyyyy</h1>
+            </div>
+            <div class="rose">
+                <div class="flower">
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                    <div class="petal"></div>
+                </div>
+                <div class="leaf">
+                    <div class="stem"></div>
+                    <div class="leafs"></div>
+                    <div class="leafs"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Liên kết CSS chỉ cho trang 3 -->
+        <link href="rose.css" rel="stylesheet" type="text/css" media="screen">
+    </div>
+
+    <button id="prevButton" class="triangle-left" onclick="changePage(-1)">&#9664;</button>
+    <button id="nextButton" class="triangle-right" onclick="changePage(1)">&#9654;</button>
+
+    <script src="root.js"></script>
+    <script>
+        let currentPageIndex = 0; // Trang hiện tại (trang đầu tiên là 0)
+        const pages = document.querySelectorAll('.page');
+
+        function changePage(delta) {
+            // Ưu tiên xử lý giới hạn trang
+            const newPageIndex = currentPageIndex + delta;
+            if (newPageIndex < 0 || newPageIndex >= pages.length) return;
+
+            // Ẩn trang hiện tại và hiển thị trang mới
+            pages[currentPageIndex].classList.remove('active');
+            pages[newPageIndex].classList.add('active');
+
+            currentPageIndex = newPageIndex;
+        }
+    </script>
+</body>
+</html>
